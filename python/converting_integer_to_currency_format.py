@@ -13,3 +13,6 @@ def to_currency(price):
             new_string += ','
         new_string += num
     return new_string
+
+def to_currency_ugly_one_liner(price):
+    return ''.join([',' + num if (len(str(price)) - i) % 3 == 0 and i != 0 else num for i, num in enumerate(str(price))])
