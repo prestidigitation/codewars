@@ -14,5 +14,10 @@ def to_currency(price):
         new_string += num
     return new_string
 
+# using hard-to-read list comprehension
 def to_currency_ugly_one_liner(price):
     return ''.join([',' + num if (len(str(price)) - i) % 3 == 0 and i != 0 else num for i, num in enumerate(str(price))])
+
+# using thousands separator from format specification mini-language. Enlightened!
+def to_currency_f_string(price):
+    return f"{price:,}"
