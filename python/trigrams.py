@@ -1,4 +1,4 @@
-# Trigrams are a special case of the n-gram, where n is 3. One trigram is a continious sequence of 3 chars in phrase.
+# Trigrams are a special case of the n-gram, where n is 3. One trigram is a continuous sequence of 3 chars in phrase.
 # * return all trigrams for the given phrase
 # * replace spaces with _
 # * return an empty string for phrases shorter than 3
@@ -15,3 +15,8 @@ def trigrams(phrase):
         trigrams.append(phrase[i:i + 3])
         i += 1
     return ' '.join(trigrams)
+
+# cleaned up using list comprehension and range
+def trigrams_two(phrase):
+    phrase = phrase.replace(' ', '_')
+    return ' '.join([phrase[i:i + 3] for i in range(len(phrase) - 2)])
