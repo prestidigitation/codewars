@@ -12,3 +12,9 @@ def count(array):
         else:
             hash[item] = 1
     return hash
+
+# using Counter from collections standard module
+from collections import Counter
+
+def count_two(array):
+    Counter(array)
