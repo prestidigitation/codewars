@@ -18,3 +18,10 @@ from collections import Counter
 
 def count_two(array):
     Counter(array)
+
+# using .get() to provide default values
+def count_three(array):
+    hash = {}
+    for item in array:
+        hash[item] = hash.get(item, 0) + 1
+    return hash
