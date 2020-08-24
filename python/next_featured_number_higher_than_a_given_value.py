@@ -26,3 +26,15 @@ def next_numb(num):
         if has_unique_digits(num) and is_odd(num) and is_multiple_of_three(num):
             return num
     return "There is no possible number that fulfills those requirements"
+
+
+# refactored solution that starts at next odd multiple of 3 and increments by 6
+def next_numb_two(num):
+    num += 1
+    while not num % 3 == 0 or not num % 2 == 1:
+        num += 1
+    while num < 9876543210:
+        if len(set(str(num))) == len(str(num)):
+            return num
+        num += 6
+    return "There is no possible number that fulfills those requirements"
