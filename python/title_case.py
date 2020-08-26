@@ -24,14 +24,9 @@ def title_case(title, minor_words=''):
             new_words.append(word.title())
     return ' '.join(new_words)
 
-# using capitalize() method
+# using capitalize() string method and list comprehension
 def title_case_two(title, minor_words=''):
     words = title.capitalize().split()
     minor_words = minor_words.lower().split()
-    new_words = []
-    for word in words:
-        if word in minor_words:
-            new_words.append(word)
-        else:
-            new_words.append(word.capitalize())
+    new_words = [word if word in minor_words else word.capitalize() for word in words]
     return ' '.join(new_words)
