@@ -23,3 +23,15 @@ def title_case(title, minor_words=''):
         else:
             new_words.append(word.title())
     return ' '.join(new_words)
+
+# using capitalize() method
+def title_case_two(title, minor_words=''):
+    words = title.capitalize().split()
+    minor_words = minor_words.lower().split()
+    new_words = []
+    for word in words:
+        if word in minor_words:
+            new_words.append(word)
+        else:
+            new_words.append(word.capitalize())
+    return ' '.join(new_words)
