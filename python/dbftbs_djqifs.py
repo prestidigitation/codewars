@@ -25,3 +25,18 @@ def encryptor(key, message):
         else:
             encrypted += char
     return encrypted
+
+
+# refactor using Python string constants
+from string import ascii_uppercase as uc, ascii_lowercase as lc
+
+def encryptor_two(key, message):
+    encrypted = ''
+    for char in message:
+        if char in uc:
+            encrypted += uc[(uc.index(char) + key) % 26]
+        elif char in lc:
+            encrypted += lc[(lc.index(char) + key) % 26]
+        else:
+            encrypted += char
+    return encrypted
